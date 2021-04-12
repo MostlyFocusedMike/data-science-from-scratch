@@ -855,3 +855,8 @@ Numbers = List[Number]
 
 def total(xs: Numbers) -> Number:
     return sum(xs)
+
+# mypy is a tool you can use to run over your code types
+
+# Operators
+# 4 // 5  that's floor div, it rounds down
