@@ -19,3 +19,4 @@ plt.ylabel("Billions of $")
 
 # Below would be how to save the image as a file, note that you can't seem to use it when you also use the plt.show() method
 # plt.savefig('images/viz_gdp.png')
+# plt.gca().clear() if you wanted to clear the same field to keep using it

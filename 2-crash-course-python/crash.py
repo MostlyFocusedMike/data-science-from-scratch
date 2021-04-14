@@ -107,7 +107,7 @@ def create_user(user):
     name, age, bio = user
     print(f'name: {name}, age: {age}, bio: {bio}')
 
-
+# Important to know: you can use both named and positional variables at once, the positionals come first
 
 
 
@@ -239,10 +239,10 @@ my_tuple = (1, 2)
 other_tuple = 3, 4  # please don't use this for me. I know it's allowed but please don't
 my_list[1] = 3      # my_list is now [1, 3]
 
-try:
-    my_tuple[1] = 3
-except TypeError:
-    print("cannot modify a tuple they are immutable, remember?")
+# try:
+#     my_tuple[1] = 3
+# except TypeError:
+#     print("cannot modify a tuple they are immutable, remember?")
 
 def sum_and_product(x, y):
     return (x + y), (x * y) # This is using a tuple without () and I super hate it
@@ -696,11 +696,11 @@ def add(a, b): return a + b
 
 # Argument unpacking works on any function
 add(1, 2)      # returns 3
-try:
-    add([1, 2])
-except TypeError:
-    print("add expects two inputs")
-add(*[1, 2])   # returns 3
+# try:
+#     add([1, 2])
+# except TypeError:
+#     print("add expects two inputs")
+# add(*[1, 2])   # returns 3
 
 
 # args and kwargs
@@ -723,10 +723,10 @@ def f2(x, y):
     return x + y
 
 g = doubler(f2)
-try:
-    g(1, 2)
-except TypeError:
-    print("as defined, g only takes one argument")
+# try:
+#     g(1, 2)
+# except TypeError:
+#     print("as defined, g only takes one argument")
 
 # In order to deal with an unknown number of arguments, you can use *args, which
 def magic(*args, **kwargs):
@@ -788,7 +788,7 @@ Vector = List[float]
 def dot_product(x, y): ...
 
 # we have not yet defined Vector, but imagine we had
-def dot_product(x: Vector, y: Vector) -> float: ...
+# def dot_product(x: Vector, y: Vector) -> float: ...
 
 # The typing module is what we need to add types to our code with more complex things
 from typing import Union
@@ -803,8 +803,8 @@ def total(xs: list) -> float:
 
 from typing import List  # note capital L
 
-def total(xs: List[float]) -> float:
-    return sum(xs)
+# def total(xs: List[float]) -> float:
+#     return sum(xs)
 
 # This is how to type-annotate variables when you define them.
 # But this is unnecessary; it's "obvious" x is an int.
@@ -853,10 +853,31 @@ assert twice(comma_repeater, "type hints") == "type hints, type hints"
 Number = int
 Numbers = List[Number]
 
-def total(xs: Numbers) -> Number:
-    return sum(xs)
+# def total(xs: Numbers) -> Number:
+#     return sum(xs)
 
 # mypy is a tool you can use to run over your code types
 
 # Operators
 # 4 // 5  that's floor div, it rounds down
+
+# Getting input
+username = input("Enter username:")
+print("Username is: " + username)
+
+# Casting
+# integers
+x = int(1)   # x will be 1
+y = int(2.8) # y will be 2
+z = int("3") # z will be 3
+
+# Floats
+x = float(1)     # x will be 1.0
+y = float(2.8)   # y will be 2.8
+z = float("3")   # z will be 3.0
+w = float("4.2") # w will be 4.2
+
+# strings
+x = str("s1") # x will be 's1'
+y = str(2)    # y will be '2'
+z = str(3.0)  # z will be '3.0'
