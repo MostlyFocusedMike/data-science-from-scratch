@@ -474,6 +474,7 @@ any([])               # False, no truthy elements in the list
 x = [4, 1, 2, 3]
 y = sorted(x)     # y is [1, 2, 3, 4], x is unchanged
 x.sort()          # now x is [1, 2, 3, 4]
+# sorted is pure and returns a copy, sort() is mutational and returns None
 
 # sort the list by absolute value from largest to smallest
 # reverse takes a boolean, and key takes a callback that passes in the values in the list, and then sorts the results (not -1, 0, 1 like JS, just the actual values)
